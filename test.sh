@@ -3,8 +3,8 @@ echo "上传远程服务器成功"
 
 #镜像名：自定义
 imageNAME="test"
-#该端口为Docker宿主机端口：自定义
-PORT=50000
+#该端口为Docker内部端口：（项目运行在docker中，项目中写清楚端口号）
+PORT=8080
 #容器1：使用镜像包启动的容器名称，数量自定义，我是使用一个镜像启动3个容器
 CONNAME1="test"
 
@@ -43,6 +43,6 @@ docker build -t ${imageNAME} .
 echo "构筑镜像结束"
 
 #创建并运行容器1：参数-p 8111:{port} 其中8111是容器暴露端口，自定义即可
-docker run --name ${CONNAME1} -d -p 50000:${PORT} -e "SPRING_PROFILES_ACTIVE=uat" ${imageNAME}
+docker run --name ${CONNAME1} -d -p 50000:${8080} -e "SPRING_PROFILES_ACTIVE=uat" ${imageNAME}
 echo "创建容器$CONNAME1成功"
 
