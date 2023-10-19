@@ -43,6 +43,6 @@ docker build -t ${imageNAME} .
 echo "构筑镜像结束"
 
 #创建并运行容器1：参数-p 8111:{port} 其中8111是容器暴露端口，自定义即可
-docker run --name ${CONNAME1} -d -p 50000:${8080} -e "SPRING_PROFILES_ACTIVE=uat" ${imageNAME}
+docker run --name ${CONNAME1} -d -p 50000:${port} ${imageNAME}
 echo "创建容器$CONNAME1成功"
 
