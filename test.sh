@@ -16,7 +16,7 @@ ls -l
 #此目录为jenkins打包后发送文件目录,目录结构如下
 #cmms-receiver-2.0-RELEASE.jar
 #classes/Dockerfile
-cd ./
+cd /root/docker
 ls -l
 
 
